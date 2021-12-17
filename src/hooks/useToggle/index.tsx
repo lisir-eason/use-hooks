@@ -26,7 +26,8 @@ const App: React.FC = () => {
 
 export default App;
 
-const codeString = `export const useToggle = (initialState: boolean = false): [boolean, any] => {
+const codeString = `//源码
+export const useToggle = (initialState: boolean = false): [boolean, any] => {
   const [state, setState] = useState<boolean>(initialState);
 
   const toggle = useCallback(() => {
@@ -36,4 +37,25 @@ const codeString = `export const useToggle = (initialState: boolean = false): [b
   return [state, toggle];
 };
 
-const [btnChange, toggleBtnChange] = useToggle(false);`;
+const [btnChange, toggleBtnChange] = useToggle(false);
+
+//用法
+const App: React.FC = () => {
+  const [btnChange, toggleBtnChange] = useToggle(false);
+
+  return (
+    <>
+      <DemoBox>
+        <Button
+          type="primary"
+          onClick={toggleBtnChange}
+          style={{ marginRight: 20 }}
+        >
+          切换
+        </Button>
+        <Switch checked={btnChange} />
+      </DemoBox>
+      <CodeBox codeString={codeString} />
+    </>
+  );
+};`;
