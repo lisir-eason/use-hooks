@@ -5,6 +5,7 @@ import HomePage from "./pages/Homepage";
 import UseToggle from "./hooks/useToggle";
 import UseAsync from "./hooks/useAsync";
 import UseAuth from "./hooks/useAuth";
+import UseRouter from "./hooks/useRouter";
 
 import "./App.css";
 import { PageContainer } from "./components/PageBox";
@@ -21,6 +22,7 @@ const App: React.FC = () => {
               <Route path="/useToggle" element={<UseToggle />} />
               <Route path="/useAsync" element={<UseAsync />} />
               <Route path="/useAuth" element={<UseAuth />} />
+              <Route path="/useRouter" element={<UseRouter />} />
             </Routes>
           </PageContainer>
         </BrowserRouter>

@@ -43,6 +43,13 @@ const data: User[] = [
     description: "一个用来管理用户登录状态的hook",
     to: "/useAuth",
   },
+  {
+    key: 3,
+    name: "useRouter",
+    description:
+      "react-router-dom已经提供了很多的hook，useRouter降其融合在一个hook中",
+    to: "/useRouter?userId=1",
+  },
 ];
 
 const HomePage: React.FC = () => {
