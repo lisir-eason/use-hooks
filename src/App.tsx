@@ -4,23 +4,28 @@ import styled from "@emotion/styled";
 import HomePage from "./pages/Homepage";
 import UseToggle from "./hooks/useToggle";
 import UseAsync from "./hooks/useAsync";
+import UseAuth from "./hooks/useAuth";
 
 import "./App.css";
 import { PageContainer } from "./components/PageBox";
+import { ProvideAuth } from "./hooks/useAuth/useAuth";
 
 const App: React.FC = () => {
   return (
-    <AllContainer>
-      <BrowserRouter>
-        <PageContainer>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/useToggle" element={<UseToggle />} />
-            <Route path="/useAsync" element={<UseAsync />} />
-          </Routes>
-        </PageContainer>
-      </BrowserRouter>
-    </AllContainer>
+    <ProvideAuth>
+      <AllContainer>
+        <BrowserRouter>
+          <PageContainer>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/useToggle" element={<UseToggle />} />
+              <Route path="/useAsync" element={<UseAsync />} />
+              <Route path="/useAuth" element={<UseAuth />} />
+            </Routes>
+          </PageContainer>
+        </BrowserRouter>
+      </AllContainer>
+    </ProvideAuth>
   );
 };
 

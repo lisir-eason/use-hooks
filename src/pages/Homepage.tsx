@@ -37,6 +37,12 @@ const data: User[] = [
     description: "一个用来管理异步请求状态的自定义hook",
     to: "/useAsync",
   },
+  {
+    key: 2,
+    name: "useAuth",
+    description: "一个用来管理用户登录状态的hook",
+    to: "/useAuth",
+  },
 ];
 
 const HomePage: React.FC = () => {

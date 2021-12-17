@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-type statusType = "idle" | "pending" | "success" | "error";
+export type statusType = "idle" | "pending" | "success" | "error";
 
 export const useAsync = <T>(asyncFn: () => Promise<T>, immediate = true) => {
   const [status, setStatus] = useState<statusType>("idle");
@@ -12,7 +12,7 @@ export const useAsync = <T>(asyncFn: () => Promise<T>, immediate = true) => {
     setValue(null);
     setError(null);
 
-    asyncFn()
+    return asyncFn()
       .then((res) => {
         setValue(res);
         setStatus("success");
