@@ -2,7 +2,6 @@ import React from "react";
 import { Table } from "antd";
 import { ColumnsType } from "antd/lib/table";
 import { Link } from "react-router-dom";
-import { PageContainer } from "../components/PageBox";
 
 interface User {
   key: number;
@@ -32,13 +31,17 @@ const data: User[] = [
     description: "一个用来保存布尔值并取反布尔值的hook",
     to: "/useToggle",
   },
+  {
+    key: 1,
+    name: "useAsync",
+    description: "一个用来管理异步请求状态的自定义hook",
+    to: "/useAsync",
+  },
 ];
 
 const HomePage: React.FC = () => {
   return (
-    <PageContainer>
-      <Table columns={columns} dataSource={data} pagination={false} bordered />
-    </PageContainer>
+    <Table columns={columns} dataSource={data} pagination={false} bordered />
   );
 };
 
